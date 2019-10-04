@@ -6,7 +6,7 @@ from .models import *
 def polls_list(request):
     MAX_OBJECTS = 20
     polls = Categories.objects.all()[:MAX_OBJECTS]
-    data = {"results": list(polls.values("nom", "description", "image","statut" ))}
+    data = {"results": list(polls.values("nom", "description", "image","statut", "date_add","date_update" ))}
     return JsonResponse(data)
 
 

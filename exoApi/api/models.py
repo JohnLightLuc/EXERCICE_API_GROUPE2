@@ -14,7 +14,7 @@ class Categories(models.Model):
 
 class SousCategories(models.Model):
     categorie=models.ForeignKey(Categories,on_delete=models.CASCADE,related_name='categorie')
-    nom = models.CharField(, max_length=50)
+    nom = models.CharField(max_length=50)
     description = models.TextField()
     image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
     statut = models.BooleanField()
@@ -29,7 +29,7 @@ class Articles(models.Model):
     sousCategorie=models.ForeignKey(SousCategories,on_delete=models.CASCADE,related_name='souscategorie')
     nom = models.CharField(max_length=50)
     description = models.TextField()
-    image = models.ImageField(, upload_to=None, height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
     statut = models.BooleanField()
     date_add=models.DateTimeField(auto_now_add=True)
     date_update=models.DateTimeField(auto_now_add=True)
